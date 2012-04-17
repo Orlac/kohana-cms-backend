@@ -8,3 +8,6 @@ coverage
 kohana_release
 nbproject
 build
+
+/conf.php
+/application/config/database.php
