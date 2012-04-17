@@ -1,0 +1,224 @@
+<style type="text/css">
+/* Reset */
+div#kohana-debugbar,
+div#kohana-debugbar div,
+div#kohana-debugbar span,
+div#kohana-debugbar pre,
+div#kohana-debugbar h1,
+div#kohana-debugbar img,
+div#kohana-debugbar a,
+div#kohana-debugbar ul, 
+div#kohana-debugbar li,
+div#kohana-debugbar table,
+div#kohana-debugbar tr,
+div#kohana-debugbar td,
+div#kohana-debugbar th {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: middle;
+	background: transparent;
+	line-height: 1;
+	text-transform: none;
+	font-size:100%;
+}
+div#kohana-debugbar table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+div#kohana-debugbar :focus { outline: 0; }
+div#kohana-debugbar ul {
+	list-style:none;
+}
+
+/* Global */
+div#kohana-debugbar {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: #333;
+	text-align: left;
+	line-height: 12px;
+}
+div#kohana-debugbar h1 {
+  font-size: 16px;
+  font-weight: bold;
+	margin-top: 30px;
+  margin-bottom: 10px;
+  padding:0px 5px;
+  border: 0px;
+  background-color: #eee;
+	color: #000;
+	display:block;
+}
+div#kohana-debugbar a, 
+div#kohana-debugbar a:hover {
+  text-decoration: none;
+  color: #222;
+}
+div#kohana-debugbar pre { line-height: 1.3 }
+div#kohana-debugbar .top {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	z-index: 9999;
+	border-bottom: 1px solid #aaa;
+	background-color: #efefef;
+	padding: 10px;
+}
+
+/* Tables */
+div#kohana-debugbar table {
+  padding: 3px;
+  font-size: 11px;
+	border: 1px solid #999;
+	width: 99%;
+	margin:0px 5px;
+	font-family: monospace;
+}
+div#kohana-debugbar td {
+  padding: 3px 3px;
+  vertical-align: top;
+	background-color: #eee;
+}
+div#kohana-debugbar tr.odd td {
+	background-color: #ddd;
+}
+div#kohana-debugbar th {
+	padding: 3px 5px;
+	vertical-align: top;
+	background-color: #999;
+	color: #eee;
+	white-space: nowrap;
+}
+div#kohana-debugbar td,
+div#kohana-debugbar th {
+	border: 1px solid #efefef;
+}
+div#kohana-debugbar tr.current {
+	font-weight: bold;
+}
+
+/* Toolbar */
+div#kohana-debugbar div#debugbar {
+	position: fixed;
+	padding: 0 0 3px 0;
+	top: 0px;
+	opacity: 0.80;
+	filter: alpha(opacity:80);
+	z-index: 10000;
+	white-space: nowrap;
+	line-height: 16px;
+	background-color: #ccc;
+}
+div#kohana-debugbar div#debugbar.debugbar-align-center { left: auto; right: auto; }
+div#kohana-debugbar div#debugbar.debugbar-align-right { right: 0; }
+div#kohana-debugbar div#debugbar.debugbar-align-left { left: 0; }
+div#kohana-debugbar div#debugbar img { vertical-align: middle; }
+div#kohana-debugbar div#debugbar ul.menu {
+	padding: 5px;
+	display: inline;
+}
+div#kohana-debugbar div#debugbar ul.menu li {
+	display: inline;
+  list-style: none;
+  padding: 0 5px;
+  border-right: 1px solid #aaa;
+	cursor: pointer;
+	line-height: 16px;
+}
+div#kohana-debugbar div#debugbar ul.menu li.last { 
+	border: none;
+}
+
+/* Benchmarks */
+div#kohana-debugbar div#debug-benchmarks { padding: 3px 0px; }
+
+/* SQL queries */
+div#kohana-debugbar div#debug-database { padding: 3px 0px; }
+
+/* Vars & Config */
+div#kohana-debugbar div#debug-vars {
+	padding: 3px 0px; 
+}
+div#kohana-debugbar div#debug-vars pre {
+	background-color: #ddd;
+	padding: 5px;
+	color: #333;
+}
+div#kohana-debugbar div#debug-vars .varmenu { 
+  margin: 20px 0 0 0; 
+	height: 23px;
+}
+div#kohana-debugbar div#debug-vars .varmenu li {
+	float: left;
+	display: block;
+	padding: 5px;
+	margin: 0 6px 0 0;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	cursor:  pointer;
+}
+div#kohana-debugbar div#debug-vars .varmenu li.active {
+	background-color: #ddd;
+	color: #000;
+}
+div#kohana-debugbar div#debug-vars .configmenu { background-color: #ddd; }
+div#kohana-debugbar div#debug-vars .configmenu li {
+	display: block;
+	padding: 5px;
+	cursor: pointer;
+}
+div#kohana-debugbar div#debug-vars .configmenu li.odd { background-color: #eee; }
+div#kohana-debugbar div#debug-vars .configmenu li.even { background-color: #fff; }
+div#kohana-debugbar div#debug-vars .configmenu li.odd pre { background-color: #eee; }
+div#kohana-debugbar div#debug-vars .configmenu li.even pre { background-color: #fff; }
+div#kohana-debugbar div#debug-vars .configmenu li:hover.odd { background-color: #ddd; }
+div#kohana-debugbar div#debug-vars .configmenu li:hover.even { background-color: #ddd; }
+div#kohana-debugbar div#debug-vars .configmenu li:hover.odd pre { background-color: #ddd; }
+div#kohana-debugbar div#debug-vars .configmenu li:hover.even pre { background-color: #ddd; }
+
+/* Logs & Msgs */
+div#kohana-debugbar div#debug-log {
+	padding: 3px 0px;
+	font-size: 11px;
+}
+
+/* Ajax */
+div#kohana-debugbar div#debug-ajax {
+	padding: 3px 0px;
+	font-size: 11px;
+}
+
+/* Custom data */
+div#kohana-debugbar div#debug-customs {
+	padding: 3px 0px;
+}
+div#kohana-debugbar div#debug-customs pre {
+	background-color: #ddd;
+	padding: 5px;
+	color: #333;
+}
+div#kohana-debugbar div#debug-customs .sectionmenu {
+  margin: 20px 0 0 0;
+	height: 23px;
+}
+div#kohana-debugbar div#debug-customs .sectionmenu li {
+	float: left;
+	display: block;
+	padding: 5px;
+	margin: 0 6px 0 0;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	cursor:  pointer;
+}
+div#kohana-debugbar div#debug-customs .sectionmenu li.active {
+	background-color: #ddd;
+	color: #000;
+}
+
+</style>

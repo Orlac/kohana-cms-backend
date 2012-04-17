@@ -1,0 +1,9 @@
+.captcha
+{
+    margin: 0px;
+    padding: 0px;
+}
+.captcha img
+{
+    cursor: pointer;
+}
